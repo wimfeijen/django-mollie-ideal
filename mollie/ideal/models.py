@@ -79,4 +79,8 @@ class MollieIdealPayment(models.Model):
         return self.get_bank_id_display()
 
     def __unicode__(self):
-        return u'Mollie/iDEAL Payment ID: %d' % self.id
+        if self.id:
+            return u'Mollie/iDEAL Payment ID: %d' % self.id
+        else:
+            return u'Mollie/iDEAL Payment - not saved yet'
+
